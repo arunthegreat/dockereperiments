@@ -1,1 +1,6 @@
-Test
+# Derived from official JBoss Wildfly Image
+FROM jboss/wildfly
+
+COPY ./resources/standalone.xml /opt/jboss/wildfly/standalone/configuration/
+COPY ./resources/mysql-connector-java-8.0.17.jar /opt/jboss/wildfly/modules/system/layers/base/com/mysql/main/
+COPY ./resources/module.xml /opt/jboss/wildfly/modules/system/layers/base/com/mysql/main/
